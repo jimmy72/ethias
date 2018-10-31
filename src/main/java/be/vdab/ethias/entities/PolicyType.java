@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "insurance_types")
-public abstract class InsuranceType implements Serializable, Insurable {
+@Table(name = "policy_types")
+public class PolicyType implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	

@@ -1,6 +1,7 @@
 package be.vdab.ethias.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,14 +9,17 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "policies")
-public class Policy implements Serializable {
+public abstract class Policy implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -30,8 +34,8 @@ public class Policy implements Serializable {
 	private Customer customer;
 	
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "insurance_type_id")
-	private InsuranceType insuranceType;
+	@JoinColumn(name = "policy_type_id")
+	private PolicyType policyType;
 
 	public long getId() {
 		return id;
@@ -45,9 +49,9 @@ public class Policy implements Serializable {
 		return customer;
 	}
 
-	public InsuranceType getInsuranceType() {
-		return insuranceType;
+	public PolicyType getInsuranceType() {
+		return policyType;
 	}
 	
-	
+	public abstract BigDecimal calculatePremium();
 }
