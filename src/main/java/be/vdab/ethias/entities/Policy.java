@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
-@Entity
+@Entity //Hibernate does not require the use of a Discriminator column, so ignore the error
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "policies")
 public abstract class Policy implements Serializable {
