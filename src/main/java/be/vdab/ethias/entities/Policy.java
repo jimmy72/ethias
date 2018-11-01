@@ -13,7 +13,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
 
@@ -24,7 +23,7 @@ public abstract class Policy implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
 	@Column(name="policy_number")
