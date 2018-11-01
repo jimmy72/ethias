@@ -3,14 +3,33 @@
 <head th:replace="fragments::head(title='Customers')"></head>
 <body>
 	<nav th:replace='fragments::menu'></nav>
-	<h1>Customers</h1>
 	<img alt='ethias' th:src='@{/images/banner.jpg}' class='fullwidth'>
-	<div th:each='customer:${customers}'>
-		<h2 th:text='|${customer.firstName} ${customer.surname}|'></h2>
-		<div
-			th:text='|${customer.address.street} ${customer.address.houseNumber}|'></div>
-		<div
-			th:text='|${customer.address.location.postalCode} ${customer.address.location.place}|'></div>
+	<h1>Customer list</h1>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>First name</th>
+					<th>Last name</th>
+					<th>Street</th>
+					<th>Housenumber</th>
+					<th>Postal code</th>
+					<th>Place</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each='customer:${customers}'>
+					<td th:text='${customer.firstName}'></td>
+					<td th:text='${customer.surname}'></td>
+					<td th:text='${customer.address.street}'></td>
+					<td th:text='${customer.address.houseNumber}'></td>
+					<td th:text='${customer.address.location.postalCode}'></td>
+					<td th:text='${customer.address.location.place}'></td>
+					<td th:text='${customer.email}'></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>
