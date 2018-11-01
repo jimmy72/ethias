@@ -24,7 +24,7 @@ public class Customer implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@Column(name = "first_name")
 	private String firstName;
@@ -33,11 +33,13 @@ public class Customer implements Serializable {
 	@Embedded
 	private Address address;
 	
+	private String email;
+	
 	@OneToMany(mappedBy = "customer") 
 	@OrderBy("policy_number") 
 	private Set<Policy> policies;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -48,6 +50,10 @@ public class Customer implements Serializable {
 	public Address getAddress() {
 		return address;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
 
 	public Set<Policy> getPolicies() {
 		return Collections.unmodifiableSet(policies);
@@ -57,6 +63,32 @@ public class Customer implements Serializable {
 	public String getFirstName() {
 		return firstName;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.toUpperCase().hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Customer))
+			return false;
+		Customer other = (Customer) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equalsIgnoreCase(other.email))
+			return false;
+		return true;
+	}
 	
 	
+
 }

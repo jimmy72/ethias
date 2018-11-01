@@ -2,6 +2,7 @@ package be.vdab.ethias.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,8 @@ public class Location implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private short postal_code;
+	@Column(name = "postal_code")
+	private short postalCode;
 	private String place;
 	
 	protected Location() {}
@@ -34,11 +36,13 @@ public class Location implements Serializable{
 	public long getId() {
 		return id;
 	}
-	public short getPostal_code() {
-		return postal_code;
-	}
+	
 	public String getPlace() {
 		return place;
+	}
+
+	public short getPostalCode() {
+		return postalCode;
 	}
 	
 }

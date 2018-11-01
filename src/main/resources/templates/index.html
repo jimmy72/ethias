@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang='nl' xmlns:th='http://www.thymeleaf.org'>
+<head th:replace="fragments::head(title='Ethias Verzekering België | Doet wat moet ...')"></head> 
+<body>
+<nav th:replace='fragments::menu'></nav> 
+<h1>Welkom bij ethias, <span th:text='${begroeting}'></span>.</h1>
+<blockquote>Vind hier de verzekering die u nodig hebt. Online offerte en contractaanvraag.</blockquote>
+<img alt='ethias' th:src='@{/images/banner.jpg}' class='fullwidth'>
+</body></html>

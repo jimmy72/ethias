@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang='nl' xmlns:th='http://www.thymeleaf.org'>
+<head th:fragment='head(title)'>
+<meta charset='UTF-8'>
+<link rel='icon' th:href='@{/images/ethias.ico}'
+	type='image/x-icon'>
+<title th:text='${title}'></title>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<link rel='stylesheet' th:href='@{/css/ethias.css}'>
+</head>
+<body>
+	<nav th:fragment='menu'>
+		<ul>
+			<li><a th:href='@{/}'>&#8962;</a></li>
+			<li><a href='#'>Customers</a>
+				<ul>
+					<li><a th:href='@{/customers}'>List</a></li>
+				</ul></li>
+			<li><a href='#'>Policies</a>
+				<ul>
+					<li><a th:href='@{/policies}'>List</a></li>
+				</ul></li>
+			
+		</ul>
+	</nav>
+</body>
+</html>
