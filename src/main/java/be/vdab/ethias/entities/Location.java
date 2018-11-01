@@ -17,9 +17,6 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 
 @Entity
 @Table(name = "locations")
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@JsonAutoDetect(fieldVisibility = Visibility.ANY)
 public class Location implements Serializable{
 
 	private static final long serialVersionUID = 1L;
