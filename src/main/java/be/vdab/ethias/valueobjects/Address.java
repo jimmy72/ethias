@@ -23,6 +23,14 @@ public class Address implements Serializable {
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	@JoinColumn(name = "location_id")
 	private Location location;
+	
+	protected Address() {}
+	
+	public Address(String street, String houseNumber, Location location) {
+		this.street = street;
+		this.houseNumber = houseNumber;
+		this.location = location;
+	}
 
 	public String getStreet() {
 		return street;

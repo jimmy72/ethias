@@ -63,6 +63,24 @@ public class Customer implements Serializable {
 	public String getFirstName() {
 		return firstName;
 	}
+	
+	
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	@Override
 	public int hashCode() {

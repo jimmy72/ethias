@@ -30,6 +30,11 @@ public class Location implements Serializable{
 	
 	protected Location() {}
 	
+	public Location(short postalCode, String place) {
+		this.postalCode = postalCode;
+		this.place = place;
+	}
+	
 	public long getId() {
 		return id;
 	}

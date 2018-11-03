@@ -16,7 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import be.vdab.ethias.entities.CarPolicy;
 import be.vdab.ethias.entities.Customer;
+import be.vdab.ethias.entities.Location;
 import be.vdab.ethias.entities.Policy;
+import be.vdab.ethias.valueobjects.Address;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -24,21 +26,38 @@ import be.vdab.ethias.entities.Policy;
 public class CustomerRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	@Autowired
-	private CustomerRepository repository;
+	private CustomerRepository customerRepository;
+	@Autowired
+	private LocationRepository locationRepository;
 	
 	@Test
 	public void findAll() {
-		List<Customer> customers = repository.findAll();
+		List<Customer> customers = customerRepository.findAll();
 		assertEquals(5, customers.size());
-//		for(Customer customer : customers) {
-//			//System.out.println(customer.getEmail());
-//			Set<Policy> policies = customer.getPolicies();
-//			for(Policy policy : policies) {
-//				if(policy instanceof CarPolicy) {
-//					System.out.println(((CarPolicy) policy).getCatalogPrice());
-//				}
-//				
-//			}
-//		}
+		for(Customer customer : customers) {
+			//System.out.println(customer.getEmail());
+			Set<Policy> policies = customer.getPolicies();
+			for(Policy policy : policies) {
+				if(policy instanceof CarPolicy) {
+					System.out.println(((CarPolicy) policy).getCatalogPrice());
+				}
+				
+			}
+		}
+	}
+	
+	@Test
+	public void create() {
+		Location location = new Location((short) 9999, "TestLocation");
+		locationRepository.save(location);
+		Address address = new Address("Teststraat", "999", location);
+		Customer customer = new Customer();
+		customer.setFirstName("TestFirstName");
+	    customer.setSurname("TestSurname");
+	    customer.setAddress(address);
+	    customer.setEmail("testemail@hotmail.com");
+	    int numberOfCustomers = super.countRowsInTable("customers");
+	    customerRepository.save(customer);
+	    assertEquals(numberOfCustomers + 1, super.countRowsInTable("customers") );
 	}
 }

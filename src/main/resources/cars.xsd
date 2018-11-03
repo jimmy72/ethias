@@ -1,0 +1,36 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://vdab.be/ethias/gs-producing-web-service"
+           targetNamespace="http://vdab.be/ethias/gs-producing-web-service" elementFormDefault="qualified">
+
+   <xs:complexType name="Car">
+        <xs:sequence>
+            <xs:element name="brand" type="xs:string"/>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="catalogPrice" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="getCarRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="brand" type="xs:string"/>
+                <xs:element name="model" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="car" type="tns:Car"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getAllCarsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="allCars" type="tns:Car" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
