@@ -20,7 +20,10 @@
 			</thead>
 			<tbody>
 				<tr th:each='customer:${customers}'>
-					<td th:text='${customer.firstName}'></td>
+					
+					<td >
+						<a th:href='@{/customers/{id}(id=${customer.id})}' th:text='${customer.firstName}'></a>
+					</td>
 					<td th:text='${customer.surname}'></td>
 					<td th:text='${customer.address.street}'></td>
 					<td th:text='${customer.address.houseNumber}'></td>
@@ -28,7 +31,6 @@
 					<td th:text='${customer.address.location.place}'></td>
 					<td th:text='${customer.email}'></td>
 				</tr>
-				
 			</tbody>
 		</table>
 	</div>

@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
 	<entity>
-		<entity-name>be.vdab.ethias.entities.Customer</entity-name>
+		<entity-name>be.vdab.ethias.entities.PolicyType</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>206</entity-height>
-		<entity-X-Coordinate>68</entity-X-Coordinate>
-		<entity-Y-Coordinate>41</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>be.vdab.ethias.valueobjects.Address</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>128</entity-height>
-		<entity-X-Coordinate>68</entity-X-Coordinate>
-		<entity-Y-Coordinate>330</entity-Y-Coordinate>
+		<entity-height>108</entity-height>
+		<entity-X-Coordinate>400</entity-X-Coordinate>
+		<entity-Y-Coordinate>342</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -33,22 +22,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>be.vdab.ethias.entities.PolicyType</entity-name>
+		<entity-name>be.vdab.ethias.entities.Location</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>108</entity-height>
-		<entity-X-Coordinate>400</entity-X-Coordinate>
-		<entity-Y-Coordinate>342</entity-Y-Coordinate>
+		<entity-height>128</entity-height>
+		<entity-X-Coordinate>239</entity-X-Coordinate>
+		<entity-Y-Coordinate>332</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>be.vdab.ethias.entities.Location</entity-name>
+		<entity-name>be.vdab.ethias.entities.Policy</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>128</entity-height>
-		<entity-X-Coordinate>239</entity-X-Coordinate>
-		<entity-Y-Coordinate>332</entity-Y-Coordinate>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>400</entity-X-Coordinate>
+		<entity-Y-Coordinate>61</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -77,6 +66,17 @@
 	</entity>
 
 	<entity>
+		<entity-name>be.vdab.ethias.entities.Customer</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>68</entity-X-Coordinate>
+		<entity-Y-Coordinate>41</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
 		<entity-name>be.vdab.ethias.entities.FamilyPolicy</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>70</entity-height>
@@ -88,11 +88,11 @@
 	</entity>
 
 	<entity>
-		<entity-name>be.vdab.ethias.entities.Policy</entity-name>
+		<entity-name>be.vdab.ethias.valueobjects.Address</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>166</entity-height>
-		<entity-X-Coordinate>400</entity-X-Coordinate>
-		<entity-Y-Coordinate>61</entity-Y-Coordinate>
+		<entity-height>128</entity-height>
+		<entity-X-Coordinate>68</entity-X-Coordinate>
+		<entity-Y-Coordinate>330</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang='nl' xmlns:th='http://www.thymeleaf.org'>
+<head th:replace="fragments::head(title='Customer detail')"></head>
+<body>
+	<nav th:replace='fragments::menu'></nav>
+	<img alt='ethias' th:src='@{/images/banner.jpg}' class='fullwidth'>
+	<h1>Customer detail</h1>
+	<dl>
+		<dt>First name</dt>
+		<dd th:text='${customer.firstName}'></dd>
+		<dt>Last name</dt>
+		<dd th:text='${customer.surname}'></dd>
+		<dt>Street + number</dt>
+		<dd th:text='|${customer.address.street} ${customer.address.houseNumber}|'></dd>
+		<dt>Postal code + place</dt>
+		<dd th:text='|${customer.address.location.postalCode} ${customer.address.location.place}|'></dd>
+		<dt>Email</dt>
+		<dd th:text="${customer.email}"></dd>
+	</dl>
+	<h2>Customer policies</h2>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Policy number</th>
+					<th>Policy type</th>
+					<th>Car brand</th>
+					<th>Car model</th>
+					<th>Car catalog price</th>
+					<th>Life amount</th>
+					<th>House price</th>
+					<th>Family members</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="policy : ${customer.policies}">
+					<td th:text='${policy.policyNumber}'></td>
+					<td th:text='${policy.policyType.name}'></td>
+					<td> 
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.brand}"></span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
+					</td>
+					<td>
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.model}"></span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>	
+					</td>
+					<td>
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.catalogPrice}"></span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
+					</td>
+					<td>
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}" th:text="${policy.amount}"></span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}">N/A</span>
+					</td>
+					<td>
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.HousePolicy)}" th:text="${policy.price}"></span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.HousePolicy)}">N/A</span>
+					</td>
+					<td>
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.FamilyPolicy)}" th:text="${policy.members}"></span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.FamilyPolicy)}">N/A</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

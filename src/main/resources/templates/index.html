@@ -6,4 +6,5 @@
 <h1>Welkom bij ethias, <span th:text='${begroeting}'></span>.</h1>
 <blockquote>Vind hier de verzekering die u nodig hebt. Online offerte en contractaanvraag.</blockquote>
 <img alt='ethias' th:src='@{/images/banner.jpg}' class='fullwidth'>
+<div class="fout" th:if="${param.error != null}" th:text="${param.error}"></div>
 </body></html>

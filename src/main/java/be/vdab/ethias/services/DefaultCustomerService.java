@@ -1,6 +1,7 @@
 package be.vdab.ethias.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -24,6 +25,12 @@ class DefaultCustomerService implements CustomerService{
 	@Override
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
+	}
+
+
+	@Override
+	public Optional<Customer> findById(Long id) {
+		return customerRepository.findById(id);
 	}
 
 }

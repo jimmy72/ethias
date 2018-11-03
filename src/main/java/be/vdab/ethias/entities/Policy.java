@@ -49,11 +49,10 @@ public abstract class Policy implements Serializable {
 		return customer;
 	}
 
-	public PolicyType getInsuranceType() {
+	public PolicyType getPolicyType() {
 		return policyType;
 	}
-	
-	
+		
 	public abstract BigDecimal calculatePremium();
 
 	@Override
@@ -80,4 +79,6 @@ public abstract class Policy implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 }
