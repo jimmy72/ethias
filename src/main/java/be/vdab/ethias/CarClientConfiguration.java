@@ -7,7 +7,7 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import be.vdab.ethias.webserviceclients.CarClient;
 
 @Configuration
-public class CarConfiguration {
+public class CarClientConfiguration {
 	@Bean
 	public Jaxb2Marshaller marshaller() {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();

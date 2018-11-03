@@ -21,11 +21,9 @@ class CustomerController {
 	private static final String CUSTOMER_VIEW = "customers/customer";
 	private static final String REDIRECT_CUSTOMER_NOT_FOUND = "redirect:/";
 	private final CustomerService customerService;
-	private final CarService carService;
-	
+		
 	CustomerController(CustomerService customerService, CarService carService) {
 		this.customerService = customerService;
-		this.carService = carService;
 	}
 	
 	@GetMapping
@@ -37,7 +35,7 @@ class CustomerController {
 	ModelAndView customerDetail(@PathVariable(name = "id") long customerId, RedirectAttributes redirectAttributes) {
 		Optional<Customer> customer = this.customerService.findById(customerId);
 		if (customer.isPresent()) {
-			return new ModelAndView(CUSTOMER_VIEW).addObject("customer", customer.get()).addObject("price", carService.getCarResponse("Toyota", "Avensis").getCar().getCatalogPrice());
+			return new ModelAndView(CUSTOMER_VIEW).addObject("customer", customer.get());
 		}
 		redirectAttributes.addAttribute("error", "Customer not found!");
 		return new ModelAndView(REDIRECT_CUSTOMER_NOT_FOUND);

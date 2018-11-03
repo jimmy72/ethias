@@ -23,7 +23,7 @@ class DefaultCarService implements CarService {
 		return carRepository.findCar(carRequest);
 	}
 
-	@Override //This is the car response send back from the client
+	@Override //This is the car response send back from the external client
 	public GetCarResponse getCarResponse(String brand, String model) {
 		return carClient.getCarResponse(brand, model);
 	}

@@ -45,12 +45,12 @@
 						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>	
 					</td>
 					<td>
-						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.catalogPrice}"></span>
+						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.calculatePremium()}"></span>
 						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}" th:text="${policy.amount}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}">N/A</span>
+						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}"></span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.HousePolicy)}" th:text="${policy.price}"></span>
@@ -64,6 +64,6 @@
 			</tbody>
 		</table>
 	</div>
-	<div th:text='|Catalog price: ${price}|'></div>
+	
 </body>
 </html>
