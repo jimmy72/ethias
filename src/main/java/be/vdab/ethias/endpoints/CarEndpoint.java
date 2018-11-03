@@ -12,6 +12,7 @@ import be.vdab.ethias.services.CarService;
 
 @Endpoint
 public class CarEndpoint {
+	//gewoon koppelteken gebruiken zoals in de xml file
 	private static final String NAMESPACE_URI = "http://vdab.be/ethias/gs-producing-web-service";
 
 	private CarService carService;

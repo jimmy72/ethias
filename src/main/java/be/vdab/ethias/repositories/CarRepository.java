@@ -22,7 +22,7 @@ private static final Map<GetCarRequest, Car> cars = new HashMap<>();
 		Car car1 = new Car();
 		car1.setBrand("Toyota");
 		car1.setModel("Avensis");
-		car1.setCatalogPrice(BigDecimal.valueOf(27000));
+		car1.setCatalogPrice(BigDecimal.valueOf(99000));
 		GetCarRequest request1 = new GetCarRequest();
 		request1.setBrand("Toyota");
 		request1.setModel("Avensis");
