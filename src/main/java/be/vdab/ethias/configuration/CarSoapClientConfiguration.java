@@ -12,7 +12,7 @@ public class CarSoapClientConfiguration {
 	public Jaxb2Marshaller marshaller() {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
 		//het contextpad moet met underscores dus niet met koppeltekens zoals in xml
-		marshaller.setContextPath("be.vdab.ethias.gs_producing_web_service");
+		marshaller.setContextPath("be.vdab.ethias.wsdl");
 		return marshaller;
 	}
 

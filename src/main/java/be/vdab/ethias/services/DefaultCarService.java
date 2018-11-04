@@ -2,11 +2,11 @@ package be.vdab.ethias.services;
 
 import org.springframework.stereotype.Service;
 
-import be.vdab.ethias.gs_producing_web_service.Car;
-import be.vdab.ethias.gs_producing_web_service.GetCarRequest;
-import be.vdab.ethias.gs_producing_web_service.GetCarResponse;
 import be.vdab.ethias.soap.clients.CarSoapClient;
 import be.vdab.ethias.soap.repositories.CarRepository;
+import be.vdab.ethias.wsdl.Car;
+import be.vdab.ethias.wsdl.GetCarRequest;
+import be.vdab.ethias.wsdl.GetCarResponse;
 
 @Service
 public class DefaultCarService implements CarService {

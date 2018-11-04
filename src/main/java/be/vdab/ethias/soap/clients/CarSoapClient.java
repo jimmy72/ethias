@@ -7,8 +7,8 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.SoapFaultClientException;
 
 import be.vdab.ethias.exceptions.CarClientTransportException;
-import be.vdab.ethias.gs_producing_web_service.GetCarRequest;
-import be.vdab.ethias.gs_producing_web_service.GetCarResponse;
+import be.vdab.ethias.wsdl.GetCarRequest;
+import be.vdab.ethias.wsdl.GetCarResponse;
 
 public class CarSoapClient extends WebServiceGatewaySupport {
 	private static final Logger log = LoggerFactory.getLogger(CarSoapClient.class);

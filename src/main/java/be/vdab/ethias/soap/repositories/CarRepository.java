@@ -9,8 +9,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
-import be.vdab.ethias.gs_producing_web_service.Car;
-import be.vdab.ethias.gs_producing_web_service.GetCarRequest;
+import be.vdab.ethias.wsdl.Car;
+import be.vdab.ethias.wsdl.GetCarRequest;
 
 
 @Repository

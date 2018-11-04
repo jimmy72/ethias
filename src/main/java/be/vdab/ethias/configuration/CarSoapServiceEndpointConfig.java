@@ -28,7 +28,7 @@ public class CarSoapServiceEndpointConfig extends WsConfigurerAdapter {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
 		wsdl11Definition.setPortTypeName("CarsPort");
 		wsdl11Definition.setLocationUri("/ws/");
-		wsdl11Definition.setTargetNamespace("http://vdab.be/ethias/gs-producing-web-service");
+		wsdl11Definition.setTargetNamespace("http://vdab.be/ethias/wsdl");
 		wsdl11Definition.setSchema(carsSchema);
 		return wsdl11Definition;
 	}

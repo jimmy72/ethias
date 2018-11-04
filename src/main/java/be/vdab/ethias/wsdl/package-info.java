@@ -5,5 +5,5 @@
 // Generated on: 2018.11.03 at 12:06:09 PM CET 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://vdab.be/ethias/gs-producing-web-service", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package be.vdab.ethias.gs_producing_web_service;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://vdab.be/ethias/wsdl", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package be.vdab.ethias.wsdl;

@@ -6,15 +6,14 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import be.vdab.ethias.gs_producing_web_service.GetCarRequest;
-import be.vdab.ethias.gs_producing_web_service.GetCarResponse;
 import be.vdab.ethias.services.CarService;
+import be.vdab.ethias.wsdl.GetCarRequest;
+import be.vdab.ethias.wsdl.GetCarResponse;
 
 @Endpoint
 public class CarSoapServiceEndpoint {
-	//gewoon koppelteken gebruiken zoals in de xml file anders werkt het niet!!!!
-	private static final String NAMESPACE_URI = "http://vdab.be/ethias/gs-producing-web-service";
-
+	
+	private static final String NAMESPACE_URI = "http://vdab.be/ethias/wsdl";
 	private CarService carService;
 
 	@Autowired

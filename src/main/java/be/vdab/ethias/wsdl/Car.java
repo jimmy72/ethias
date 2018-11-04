@@ -6,7 +6,7 @@
 //
 
 
-package be.vdab.ethias.gs_producing_web_service;
+package be.vdab.ethias.wsdl;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;

@@ -1,8 +1,8 @@
 package be.vdab.ethias.services;
 
-import be.vdab.ethias.gs_producing_web_service.Car;
-import be.vdab.ethias.gs_producing_web_service.GetCarRequest;
-import be.vdab.ethias.gs_producing_web_service.GetCarResponse;
+import be.vdab.ethias.wsdl.Car;
+import be.vdab.ethias.wsdl.GetCarRequest;
+import be.vdab.ethias.wsdl.GetCarResponse;
 
 public interface CarService {
 	public abstract Car findCar(GetCarRequest carRequest);
