@@ -27,7 +27,7 @@
 					<th>Car brand</th>
 					<th>Car model</th>
 					<th>Car catalog price</th>
-					<th>Car premium (soap)</th>
+					<th>Car premium</th>
 					<th>Life amount</th>
 					<th>House price</th>
 					<th>Family members</th>
@@ -39,31 +39,31 @@
 					<td th:text='${policy.policyType.name}'></td>
 					<td> 
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.brand}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.model}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>	
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>	
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.catalogPrice}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}" th:text="${policy.calculatePremium()}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.CarPolicy)}">N/A</span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}" th:text="${policy.amount}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}">N/A</span>
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.LifePolicy)}">N/A</span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.HousePolicy)}" th:text="${policy.price}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.HousePolicy)}">N/A</span>
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.HousePolicy)}">N/A</span>
 					</td>
 					<td>
 						<span th:if="${policy instanceof T(be.vdab.ethias.entities.FamilyPolicy)}" th:text="${policy.members}"></span>
-						<span th:unless="${policy instanceof T(be.vdab.ethias.entities.FamilyPolicy)}">N/A</span>
+						<span class="na" th:unless="${policy instanceof T(be.vdab.ethias.entities.FamilyPolicy)}">N/A</span>
 					</td>
 				</tr>
 			</tbody>

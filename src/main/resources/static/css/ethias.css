@@ -1,11 +1,11 @@
 body {
-	background-color: #ccffff;
+	background-color: #e5f4f9;
 	color: #003300;
 	font-family: sans-serif;
 }
 
 nav {
-	background: #006600;
+	background: #fe0000;
 	height: 1.8em;
 	font-size: large;	
 }
@@ -21,7 +21,7 @@ nav ul,nav ul li ul {
 }
 
 nav>ul>li {
-	background-color: #006600;
+	background-color: #fe0000;
 	float: left;
 	position: relative;
 }
@@ -31,7 +31,7 @@ nav ul li a,nav ul li:hover ul {
 }
 
 nav ul li ul {
-	background-color: #006600;
+	background-color: #fe0000;
 	box-shadow: 5px 5px #777777;
 	display: none;
 	position: absolute;
@@ -40,7 +40,7 @@ nav ul li ul {
 }
 
 nav ul li:hover {
-	background-color: #00CC00;
+	background-color: #ff6666;
 }
 
 nav>ul>li>a,nav ul li ul li a, nav>ul>li>form>span,#logoutbutton {
@@ -82,6 +82,13 @@ thead {
 td, th {
 	padding-left: 0.2em;
 	padding-right: 0.2em;
+}
+
+span.na{
+	background-color: #fe0000;
+	display: inline-block;
+	width: 100%;
+	color: white;
 }
 
 th {
