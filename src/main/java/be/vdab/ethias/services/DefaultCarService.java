@@ -5,25 +5,25 @@ import org.springframework.stereotype.Service;
 import be.vdab.ethias.gs_producing_web_service.Car;
 import be.vdab.ethias.gs_producing_web_service.GetCarRequest;
 import be.vdab.ethias.gs_producing_web_service.GetCarResponse;
-import be.vdab.ethias.repositories.CarRepository;
-import be.vdab.ethias.webserviceclients.CarClient;
+import be.vdab.ethias.soap.clients.CarSoapClient;
+import be.vdab.ethias.soap.repositories.CarRepository;
 
 @Service
 public class DefaultCarService implements CarService {
 	private final CarRepository carRepository;
-	private final CarClient carClient;
+	private final CarSoapClient carClient;
 
-	public DefaultCarService(CarRepository carRepository, CarClient carClient){
+	public DefaultCarService(CarRepository carRepository, CarSoapClient carClient){
 		this.carRepository = carRepository;
 		this.carClient = carClient;
 	}
 
-	@Override //This is the car that is send back from our own soap Service
+	@Override //This is the request to our own soap Service
 	public Car findCar(GetCarRequest carRequest) {
 		return carRepository.findCar(carRequest);
 	}
 
-	@Override //This is the car response send back from the external client
+	@Override //This is the request to the external soap client
 	public GetCarResponse getCarResponse(String brand, String model) {
 		return carClient.getCarResponse(brand, model);
 	}

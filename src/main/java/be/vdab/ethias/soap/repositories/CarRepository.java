@@ -1,4 +1,4 @@
-package be.vdab.ethias.repositories;
+package be.vdab.ethias.soap.repositories;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ private static final Map<GetCarRequest, Car> cars = new HashMap<>();
 		Car car1 = new Car();
 		car1.setBrand("Toyota");
 		car1.setModel("Avensis");
-		car1.setCatalogPrice(BigDecimal.valueOf(39996));
+		car1.setCatalogPrice(BigDecimal.valueOf(29900));
 		GetCarRequest request1 = new GetCarRequest();
 		request1.setBrand("Toyota");
 		request1.setModel("Avensis");
@@ -49,7 +49,7 @@ private static final Map<GetCarRequest, Car> cars = new HashMap<>();
 		Car car4 = new Car();
 		car4.setBrand("Renault");
 		car4.setModel("Clio");
-		car4.setCatalogPrice(BigDecimal.valueOf(28000));
+		car4.setCatalogPrice(BigDecimal.valueOf(16800));
 		GetCarRequest request4 = new GetCarRequest();
 		request4.setBrand("Renault");
 		request4.setModel("Clio");

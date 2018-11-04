@@ -1,13 +1,13 @@
-package be.vdab.ethias;
+package be.vdab.ethias.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
-import be.vdab.ethias.webserviceclients.CarClient;
+import be.vdab.ethias.soap.clients.CarSoapClient;
 
 @Configuration
-public class CarClientConfiguration {
+public class CarSoapClientConfiguration {
 	@Bean
 	public Jaxb2Marshaller marshaller() {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
@@ -17,8 +17,8 @@ public class CarClientConfiguration {
 	}
 
 	@Bean
-	public CarClient carClient(Jaxb2Marshaller marshaller) {
-		CarClient carClient = new CarClient();
+	public CarSoapClient carClient(Jaxb2Marshaller marshaller) {
+		CarSoapClient carClient = new CarSoapClient();
 		carClient.setDefaultUri("http://localhost:8080/ws");
 		carClient.setMarshaller(marshaller);
 		carClient.setUnmarshaller(marshaller);

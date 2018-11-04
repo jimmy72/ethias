@@ -1,5 +1,6 @@
 package be.vdab.ethias.web;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.Set;
 
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import be.vdab.ethias.entities.CarPolicy;
 import be.vdab.ethias.entities.Customer;
 import be.vdab.ethias.entities.Policy;
+import be.vdab.ethias.exceptions.CarClientTransportException;
 import be.vdab.ethias.services.CarService;
 import be.vdab.ethias.services.CustomerService;
 
@@ -47,8 +49,13 @@ class CustomerController {
 			Set<Policy> policies = customer.get().getPolicies();
 			for(Policy policy : policies) {
 				if(policy instanceof CarPolicy) {
-					((CarPolicy) policy).setCatalogPrice(carService.getCarResponse(((CarPolicy) policy).getBrand(), 
-							((CarPolicy) policy).getModel()).getCar().getCatalogPrice());
+					try {
+						BigDecimal soapCatalogPrice = carService.getCarResponse(((CarPolicy) policy).getBrand(), ((CarPolicy) policy).getModel()).getCar().getCatalogPrice();
+						((CarPolicy) policy).setCatalogPrice(soapCatalogPrice);
+						System.out.println("soap request calalogprice ok!!!");
+					}catch(CarClientTransportException ex) {
+						System.out.println(ex.getMessage());
+					}
 				}
 			}
 			return new ModelAndView(CUSTOMER_VIEW).addObject("customer", customer.get());
