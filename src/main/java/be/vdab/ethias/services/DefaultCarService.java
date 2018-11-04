@@ -9,11 +9,11 @@ import be.vdab.ethias.repositories.CarRepository;
 import be.vdab.ethias.webserviceclients.CarClient;
 
 @Service
-class DefaultCarService implements CarService {
+public class DefaultCarService implements CarService {
 	private final CarRepository carRepository;
 	private final CarClient carClient;
 
-	DefaultCarService(CarRepository carRepository, CarClient carClient){
+	public DefaultCarService(CarRepository carRepository, CarClient carClient){
 		this.carRepository = carRepository;
 		this.carClient = carClient;
 	}

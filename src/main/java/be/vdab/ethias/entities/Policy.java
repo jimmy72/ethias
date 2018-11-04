@@ -44,7 +44,7 @@ public abstract class Policy implements Serializable {
 	public String getPolicyNumber() {
 		return policyNumber;
 	}
-
+	
 	public Customer getCustomer() {
 		return customer;
 	}
