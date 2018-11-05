@@ -35,7 +35,7 @@ public class Location implements Serializable{
 		this.place = place;
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	

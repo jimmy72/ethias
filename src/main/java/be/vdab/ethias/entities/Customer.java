@@ -40,7 +40,7 @@ public class Customer implements Serializable {
 	
 	private String email;
 	
-	@OneToMany(mappedBy = "customer") 
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL) 
 	@OrderBy("policy_number") 
 	private Set<Policy> policies;
 

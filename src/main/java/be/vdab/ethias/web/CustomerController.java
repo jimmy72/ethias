@@ -25,6 +25,7 @@ import be.vdab.ethias.exceptions.CarClientTransportException;
 import be.vdab.ethias.services.CarService;
 import be.vdab.ethias.services.CustomerService;
 import be.vdab.ethias.services.LocationService;
+import be.vdab.ethias.services.PolicyService;
 import be.vdab.ethias.valueobjects.Address;
 
 @Controller
@@ -37,11 +38,13 @@ class CustomerController {
 	private final CustomerService customerService;
 	private final CarService carService;
 	private final LocationService locationService;
+	private final PolicyService policyService;
 		
-	CustomerController(CustomerService customerService, CarService carService, LocationService locationService) {
+	CustomerController(CustomerService customerService, CarService carService, LocationService locationService, PolicyService policyService) {
 		this.customerService = customerService;
 		this.carService = carService;
 		this.locationService = locationService;
+		this.policyService = policyService;
 	}
 	
 	@GetMapping
@@ -81,7 +84,8 @@ class CustomerController {
 		Optional<Customer> customer = customerService.findById(1L);
 		if(customer.isPresent()) {
 			boolean added = customer.get().addPolicy(new CarPolicy("efijeifjeif", new PolicyType(1L, "CAR"), LocalDate.now(), customer.get(), "Ferrari", "V8", BigDecimal.valueOf(150000)));
-			System.out.println(added);
+			//policyService.create(new CarPolicy("efijeifjeif", new PolicyType(1L, "CAR"), LocalDate.now(), customer.get(), "Ferrari", "V8", BigDecimal.valueOf(150000)));
+			System.out.println("toegevoegd");
 		}
 				
 	    return new ModelAndView(TOEGEVOEGD_VIEW);
