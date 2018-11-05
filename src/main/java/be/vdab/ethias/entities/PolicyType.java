@@ -16,17 +16,22 @@ public class PolicyType implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	private String name;
 	
 	protected PolicyType() {}
-	
+		
 	public PolicyType(String name) {
 		this.name = name;
 	}
+	
+	public PolicyType(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

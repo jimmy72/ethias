@@ -14,9 +14,10 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
-
+//@MappedSuperclass
 @Entity //Hibernate does not require the use of a Discriminator column, so ignore the error
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "policies")

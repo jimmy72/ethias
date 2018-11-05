@@ -8,4 +8,5 @@ import be.vdab.ethias.entities.Customer;
 public interface CustomerService {
 	public abstract List<Customer> findAll();
 	public abstract Optional<Customer> findById(Long id);
+	public abstract void create(Customer customer);
 }

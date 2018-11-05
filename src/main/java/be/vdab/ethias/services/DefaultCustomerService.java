@@ -25,12 +25,19 @@ class DefaultCustomerService implements CustomerService{
 	@Override
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
+		
 	}
 
 
 	@Override
 	public Optional<Customer> findById(Long id) {
 		return customerRepository.findById(id);
+	}
+
+	@Transactional(readOnly = false, isolation = Isolation.READ_COMMITTED)
+	@Override
+	public void create(Customer customer) {
+		customerRepository.save(customer);
 	}
 
 }

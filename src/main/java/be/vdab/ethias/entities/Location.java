@@ -17,7 +17,7 @@ public class Location implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	@Column(name = "postal_code")
 	private short postalCode;
 	private String place;
@@ -25,6 +25,12 @@ public class Location implements Serializable{
 	protected Location() {}
 	
 	public Location(short postalCode, String place) {
+		this.postalCode = postalCode;
+		this.place = place;
+	}
+	
+	public Location(Long id, short postalCode, String place) {
+		this.id = id;
 		this.postalCode = postalCode;
 		this.place = place;
 	}
