@@ -50,13 +50,10 @@ public class CustomerRepositoryTest extends AbstractTransactionalJUnit4SpringCon
 	public void create() {
 		Location location = new Location((short) 9999, "TestLocation");
 		locationRepository.save(location);
-		Address address = new Address("Teststraat", "999", location);
-		Customer customer = new Customer();
-		customer.setFirstName("TestFirstName");
-	    customer.setSurname("TestSurname");
-	    customer.setAddress(address);
-	    customer.setEmail("testemail@hotmail.com");
-	    int numberOfCustomers = super.countRowsInTable("customers");
+		Address address = new Address("Teststreet", "999", location);
+		Customer customer = new Customer("TestFirstName", "TestSurname", 72092520736L, address, "testemail@hotmail.com");
+		int numberOfCustomers = super.countRowsInTable("customers");
+		System.out.println("Number of customers: " + numberOfCustomers);
 	    customerRepository.save(customer);
 	    assertEquals(numberOfCustomers + 1, super.countRowsInTable("customers") );
 	}

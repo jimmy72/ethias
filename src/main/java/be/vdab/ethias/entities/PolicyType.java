@@ -19,6 +19,12 @@ public class PolicyType implements Serializable {
 	private long id;
 	
 	private String name;
+	
+	protected PolicyType() {}
+	
+	public PolicyType(String name) {
+		this.name = name;
+	}
 
 	public long getId() {
 		return id;

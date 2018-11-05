@@ -25,8 +25,8 @@
 		<entity-name>be.vdab.ethias.entities.Location</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>128</entity-height>
-		<entity-X-Coordinate>239</entity-X-Coordinate>
-		<entity-Y-Coordinate>332</entity-Y-Coordinate>
+		<entity-X-Coordinate>31</entity-X-Coordinate>
+		<entity-Y-Coordinate>300</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -35,7 +35,7 @@
 	<entity>
 		<entity-name>be.vdab.ethias.entities.Policy</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>166</entity-height>
+		<entity-height>186</entity-height>
 		<entity-X-Coordinate>400</entity-X-Coordinate>
 		<entity-Y-Coordinate>61</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
@@ -68,8 +68,8 @@
 	<entity>
 		<entity-name>be.vdab.ethias.entities.Customer</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>206</entity-height>
-		<entity-X-Coordinate>68</entity-X-Coordinate>
+		<entity-height>226</entity-height>
+		<entity-X-Coordinate>225</entity-X-Coordinate>
 		<entity-Y-Coordinate>41</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
@@ -91,8 +91,8 @@
 		<entity-name>be.vdab.ethias.valueobjects.Address</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>128</entity-height>
-		<entity-X-Coordinate>68</entity-X-Coordinate>
-		<entity-Y-Coordinate>330</entity-Y-Coordinate>
+		<entity-X-Coordinate>29</entity-X-Coordinate>
+		<entity-Y-Coordinate>90</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

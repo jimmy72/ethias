@@ -2,6 +2,7 @@ package be.vdab.ethias.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,14 +30,26 @@ public abstract class Policy implements Serializable {
 	@Column(name="policy_number")
 	private String policyNumber;
 	
+	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@JoinColumn(name = "policy_type_id")
+	private PolicyType policyType;
+	
+	@Column(name = "policy_date")
+	private LocalDate date;
+	
 	@ManyToOne(optional = false, fetch = FetchType.LAZY) 
 	@JoinColumn(name = "customer_id") 
 	private Customer customer;
 	
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "policy_type_id")
-	private PolicyType policyType;
-
+	protected Policy() {}
+	
+	public Policy(String policyNumber, PolicyType policyType, LocalDate date, Customer customer) {
+		this.policyNumber = policyNumber;
+		this.policyType = policyType;
+		this.date = date;
+		this.customer = customer;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -45,12 +58,39 @@ public abstract class Policy implements Serializable {
 		return policyNumber;
 	}
 	
+	public void setPolicyNumber(String policyNumber) {
+		this.policyNumber = policyNumber;
+	}
+	
+	public PolicyType getPolicyType() {
+		return policyType;
+	}
+	
+	public void setPolicyType(PolicyType policyType) {
+		this.policyType = policyType;
+	}
+	
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
-
-	public PolicyType getPolicyType() {
-		return policyType;
+	
+	public void setCustomer(Customer customer) {
+		if(customer == null) {
+			throw new NullPointerException("Customer cannot be null!!!");
+		}
+		
+		if(! customer.getPolicies().contains(this)) {
+			customer.addPolicy(this);
+		}
+		this.customer = customer;
 	}
 		
 	public abstract BigDecimal calculatePremium();
