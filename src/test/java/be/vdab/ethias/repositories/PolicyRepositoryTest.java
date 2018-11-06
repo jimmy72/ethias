@@ -1,12 +1,11 @@
 package be.vdab.ethias.repositories;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Set;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,41 +21,26 @@ import be.vdab.ethias.entities.Location;
 import be.vdab.ethias.entities.Policy;
 import be.vdab.ethias.entities.PolicyType;
 import be.vdab.ethias.valueobjects.Address;
-import net.bytebuddy.implementation.bind.annotation.Super;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-public class CustomerRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
-	
+public class PolicyRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
+
 	@Autowired
-	private CustomerRepository customerRepository;
+	private PolicyRepository policyRepository;
 	
-	@Test
-	public void findAll() {
-		List<Customer> customers = customerRepository.findAll();
-		assertEquals(super.countRowsInTable("customers"), customers.size());
-		for(Customer customer : customers) {
-			//System.out.println(customer.getEmail());
-			Set<Policy> policies = customer.getPolicies();
-			for(Policy policy : policies) {
-				if(policy instanceof CarPolicy) {
-					System.out.println(((CarPolicy) policy).getCatalogPrice());
-				}
-				
-			}
-		}
-	}
 	
 	@Test
 	public void create() {
 		Location location = new Location(5L, (short) 3590, "DIEPENBEEK");
 		Address address = new Address("Steenakkerstraat", "26a", location);
-		Customer customer = new Customer("TestCustomerFirstName", "TestCustomerSurname", 72092520903L, address, "testemail@hotmail.com");
+		Customer customer = new Customer(1L, "Jimmy", "Godin", 72092520938L, address, "jimmy.godin@hotmail.com");
 		Policy policy = new CarPolicy("1234TEST56789", new PolicyType(1L, "CAR"), LocalDate.now(), customer, "Ferrari", "V8", BigDecimal.valueOf(150000));
-		customer.addPolicy(policy);
-		int numberOfCustomers = super.countRowsInTable("customers");
-		customerRepository.save(customer);
-	    assertEquals(numberOfCustomers + 1, super.countRowsInTable("customers") );
+		int numberOfPolicies = super.countRowsInTableWhere("policies", "customer_id=1");
+		assertEquals(2, numberOfPolicies);
+		policyRepository.save(policy);
+	    assertEquals(numberOfPolicies + 1, super.countRowsInTableWhere("policies", "customer_id=1"));
 	}
+
 }
