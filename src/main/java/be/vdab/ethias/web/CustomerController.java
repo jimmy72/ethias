@@ -78,16 +78,16 @@ class CustomerController {
 	
 	@RequestMapping(value = "/toevoegen", method = RequestMethod.POST)
 	ModelAndView toevoegen() {
-		//Location location = new Location(4L, (short) 3740, "BILZEN");
-		//Address address = new Address("Teststreet", "999", location);
-		//Customer customer = new Customer("TestFirstName", "TestSurname", 72092520736L, address, "testemail@hotmail.com");
-		Optional<Customer> customer = customerService.findById(1L);
-		if(customer.isPresent()) {
-			boolean added = customer.get().addPolicy(new CarPolicy("efijeifjeif", new PolicyType(1L, "CAR"), LocalDate.now(), customer.get(), "Ferrari", "V8", BigDecimal.valueOf(150000)));
-			//policyService.create(new CarPolicy("efijeifjeif", new PolicyType(1L, "CAR"), LocalDate.now(), customer.get(), "Ferrari", "V8", BigDecimal.valueOf(150000)));
-			System.out.println("toegevoegd");
-		}
-				
+		Location location = new Location(5L, (short) 3590, "DIEPENBEEK");
+		Address address = new Address("Steenakkerstraat", "26a", location);
+		Customer customer = new Customer("TestFirstName", "TestSurname", 72092520940L, address, "testemail@hotmail.com");
+		//Customer customer = new Customer(1L, "Jimmy", "Godin", 72092520938L, address, "jimmy.godin@hotmail.com");
+		Policy policy = new CarPolicy("956testnumber455", new PolicyType(1L, "CAR"), LocalDate.now(), customer, "Ferrari", "V8", BigDecimal.valueOf(150000));
+		customer.addPolicy(policy);
+		customerService.create(customer);
+		//policyService.create(policy);
+		
+						
 	    return new ModelAndView(TOEGEVOEGD_VIEW);
 	}
 	

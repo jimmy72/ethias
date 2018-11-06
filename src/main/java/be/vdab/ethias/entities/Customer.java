@@ -55,10 +55,24 @@ public class Customer implements Serializable {
 		this.policies = new LinkedHashSet<>();
 	}
 	
+	public Customer(Long id, String firstName, String surname, Long nationalRegistryNumber, Address address, String email) {
+		this.id = id;
+		this.firstName = firstName;
+		this.surname = surname;
+		this.nationalRegistryNumber = nationalRegistryNumber;
+		this.address = address;
+		this.email = email;
+		this.policies = new LinkedHashSet<>();
+	}
+	
 	public Long getId() {
 		return id;
 	}
 	
+	public void setId(Long id) {
+		this.id = id;
+	}
+		
 	public String getFirstName() {
 		return firstName;
 	}

@@ -53,8 +53,8 @@ public class CustomerRepositoryTest extends AbstractTransactionalJUnit4SpringCon
 	
 	@Test
 	public void create() {
-		Location location = new Location(1L, (short) 9999, "BRUSSEL");
-		Address address = new Address("Teststreet", "999", location);
+		Location location = new Location(1L, (short) 1000, "BRUSSEL");
+		Address address = new Address("Teststreet", "99", location);
 		Customer customer = new Customer("TestFirstName", "TestSurname", 72092520736L, address, "testemail@hotmail.com");
 		Policy policy = new CarPolicy("efijeifjeif", new PolicyType(1L, "CAR"), LocalDate.now(), customer, "Ferrari", "V8", BigDecimal.valueOf(150000));
 		customer.addPolicy(policy);
