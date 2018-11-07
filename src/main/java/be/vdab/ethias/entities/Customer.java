@@ -88,6 +88,14 @@ public class Customer implements Serializable {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+	
+	public Long getNationalRegistryNumber() {
+		return nationalRegistryNumber;
+	}
+
+	public void setNationalRegistryNumber(Long nationalRegistryNumber) {
+		this.nationalRegistryNumber = nationalRegistryNumber;
+	}
 
 	public Address getAddress() {
 		return address;

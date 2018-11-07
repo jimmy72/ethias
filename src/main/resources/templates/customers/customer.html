@@ -10,6 +10,8 @@
 		<dd th:text='${customer.firstName}'></dd>
 		<dt>Last name</dt>
 		<dd th:text='${customer.surname}'></dd>
+		<dt>National registry number</dt>
+		<dd th:text='${customer.nationalRegistryNumber}'></dd>
 		<dt>Street + number</dt>
 		<dd th:text='|${customer.address.street} ${customer.address.houseNumber}|'></dd>
 		<dt>Postal code + place</dt>

@@ -11,6 +11,7 @@
 				<tr>
 					<th>First name</th>
 					<th>Last name</th>
+					<th>National registry number</th>
 					<th>Street</th>
 					<th>Housenumber</th>
 					<th>Postal code</th>
@@ -21,15 +22,15 @@
 			<tbody>
 				<tr th:each='customer:${customers}'>
 					
-					<td >
-						<a th:href='@{/customers/{id}(id=${customer.id})}' th:text='${customer.firstName}'></a>
-					</td>
+					<td th:text='${customer.firstName}'></td>
 					<td th:text='${customer.surname}'></td>
+					<td th:text='${customer.nationalRegistryNumber}'></td>
 					<td th:text='${customer.address.street}'></td>
 					<td th:text='${customer.address.houseNumber}'></td>
 					<td th:text='${customer.address.location.postalCode}'></td>
 					<td th:text='${customer.address.location.place}'></td>
 					<td th:text='${customer.email}'></td>
+					<td class="nostyle"><a th:href='@{/customers/{id}(id=${customer.id})}' th:text='| > show customer policies|'></a></td>
 				</tr>
 			</tbody>
 		</table>
