@@ -123,6 +123,5 @@ public abstract class Policy implements Serializable {
 			return false;
 		return true;
 	}
-
 	
 }

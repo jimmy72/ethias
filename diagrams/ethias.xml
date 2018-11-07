@@ -3,8 +3,8 @@
 		<entity-name>be.vdab.ethias.entities.PolicyType</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>108</entity-height>
-		<entity-X-Coordinate>400</entity-X-Coordinate>
-		<entity-Y-Coordinate>342</entity-Y-Coordinate>
+		<entity-X-Coordinate>453</entity-X-Coordinate>
+		<entity-Y-Coordinate>310</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -13,9 +13,9 @@
 	<entity>
 		<entity-name>be.vdab.ethias.entities.CarPolicy</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>110</entity-height>
-		<entity-X-Coordinate>610</entity-X-Coordinate>
-		<entity-Y-Coordinate>250</entity-Y-Coordinate>
+		<entity-height>128</entity-height>
+		<entity-X-Coordinate>650</entity-X-Coordinate>
+		<entity-Y-Coordinate>70</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -35,31 +35,9 @@
 	<entity>
 		<entity-name>be.vdab.ethias.entities.Policy</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>186</entity-height>
-		<entity-X-Coordinate>400</entity-X-Coordinate>
-		<entity-Y-Coordinate>61</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>be.vdab.ethias.entities.HousePolicy</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>70</entity-height>
-		<entity-X-Coordinate>610</entity-X-Coordinate>
-		<entity-Y-Coordinate>93</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>be.vdab.ethias.entities.LifePolicy</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>70</entity-height>
-		<entity-X-Coordinate>610</entity-X-Coordinate>
-		<entity-Y-Coordinate>10</entity-Y-Coordinate>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>453</entity-X-Coordinate>
+		<entity-Y-Coordinate>31</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -69,19 +47,8 @@
 		<entity-name>be.vdab.ethias.entities.Customer</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>226</entity-height>
-		<entity-X-Coordinate>225</entity-X-Coordinate>
-		<entity-Y-Coordinate>41</entity-Y-Coordinate>
-		<primary-collapsed>false</primary-collapsed>
-		<relation-collapsed>false</relation-collapsed>
-		<basic-collapsed>false</basic-collapsed>
-	</entity>
-
-	<entity>
-		<entity-name>be.vdab.ethias.entities.FamilyPolicy</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>70</entity-height>
-		<entity-X-Coordinate>610</entity-X-Coordinate>
-		<entity-Y-Coordinate>172</entity-Y-Coordinate>
+		<entity-X-Coordinate>220</entity-X-Coordinate>
+		<entity-Y-Coordinate>21</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -91,8 +58,19 @@
 		<entity-name>be.vdab.ethias.valueobjects.Address</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>128</entity-height>
-		<entity-X-Coordinate>29</entity-X-Coordinate>
-		<entity-Y-Coordinate>90</entity-Y-Coordinate>
+		<entity-X-Coordinate>31</entity-X-Coordinate>
+		<entity-Y-Coordinate>70</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>be.vdab.ethias.entities.Car</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>861</entity-X-Coordinate>
+		<entity-Y-Coordinate>31</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
