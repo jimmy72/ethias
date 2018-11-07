@@ -27,6 +27,5 @@ public class DefaultCarService implements CarService {
 	public GetCarResponse getCarResponse(String brand, String model) {
 		return carClient.getCarResponse(brand, model);
 	}
-	
-	
+		
 }

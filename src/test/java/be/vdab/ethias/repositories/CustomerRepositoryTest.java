@@ -16,13 +16,14 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import be.vdab.ethias.entities.Car;
 import be.vdab.ethias.entities.CarPolicy;
 import be.vdab.ethias.entities.Customer;
 import be.vdab.ethias.entities.Location;
 import be.vdab.ethias.entities.Policy;
 import be.vdab.ethias.entities.PolicyType;
 import be.vdab.ethias.valueobjects.Address;
-import net.bytebuddy.implementation.bind.annotation.Super;
+
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -41,7 +42,7 @@ public class CustomerRepositoryTest extends AbstractTransactionalJUnit4SpringCon
 			Set<Policy> policies = customer.getPolicies();
 			for(Policy policy : policies) {
 				if(policy instanceof CarPolicy) {
-					System.out.println(((CarPolicy) policy).getCatalogPrice());
+					System.out.println(((CarPolicy) policy).getCar().getCatalogPrice());
 				}
 				
 			}
@@ -53,7 +54,8 @@ public class CustomerRepositoryTest extends AbstractTransactionalJUnit4SpringCon
 		Location location = new Location(5L, (short) 3590, "DIEPENBEEK");
 		Address address = new Address("Steenakkerstraat", "26a", location);
 		Customer customer = new Customer("TestCustomerFirstName", "TestCustomerSurname", 72092520903L, address, "testemail@hotmail.com");
-		Policy policy = new CarPolicy("1234TEST56789", new PolicyType(1L, "CAR"), LocalDate.now(), customer, "Ferrari", "V8", BigDecimal.valueOf(150000));
+		Car car = new Car(1L, "QS45J5698OP4523658", "Mercedes", "A-Klasse", BigDecimal.valueOf(28500.00));
+		Policy policy = new CarPolicy("1234TEST56789", new PolicyType(1L, "CAR"), LocalDate.now(), customer, true, true, car);
 		customer.addPolicy(policy);
 		int numberOfCustomers = super.countRowsInTable("customers");
 		customerRepository.save(customer);

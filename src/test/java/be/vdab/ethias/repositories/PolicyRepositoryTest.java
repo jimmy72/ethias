@@ -15,6 +15,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import be.vdab.ethias.entities.Car;
 import be.vdab.ethias.entities.CarPolicy;
 import be.vdab.ethias.entities.Customer;
 import be.vdab.ethias.entities.Location;
@@ -36,7 +37,8 @@ public class PolicyRepositoryTest extends AbstractTransactionalJUnit4SpringConte
 		Location location = new Location(5L, (short) 3590, "DIEPENBEEK");
 		Address address = new Address("Steenakkerstraat", "26a", location);
 		Customer customer = new Customer(1L, "Jimmy", "Godin", 72092520938L, address, "jimmy.godin@hotmail.com");
-		Policy policy = new CarPolicy("1234TEST56789", new PolicyType(1L, "CAR"), LocalDate.now(), customer, "Ferrari", "V8", BigDecimal.valueOf(150000));
+		Car car = new Car(1L, "QS45J5698OP4523658", "Mercedes", "A-Klasse", BigDecimal.valueOf(28500.00));
+		Policy policy = new CarPolicy("1234TEST56789", new PolicyType(1L, "CAR"), LocalDate.now(), customer, true, true, car);
 		int numberOfPolicies = super.countRowsInTableWhere("policies", "customer_id=1");
 		assertEquals(2, numberOfPolicies);
 		policyRepository.save(policy);

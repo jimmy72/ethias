@@ -28,7 +28,8 @@ public class CustomerTest {
 	@Test
 	public void addPolicy() {
 		PolicyType type = new PolicyType("CAR");
-		Policy carPolicy = new CarPolicy("777TEST7773", type, LocalDate.now(), customer, "Mercedes" ,"A-Klasse", BigDecimal.valueOf(45000));
+		Car car = new Car("QS45J5698OP4523658", "Mercedes", "A-Klasse", BigDecimal.valueOf(28500.00));
+		Policy carPolicy = new CarPolicy("777TEST7773", type, LocalDate.now(), customer, true, true, car);
 		customer.addPolicy(carPolicy);
 		assertEquals(1, customer.getPolicies().size());
 		
@@ -37,10 +38,10 @@ public class CustomerTest {
 		while(iterator.hasNext()) {
 			Policy p = iterator.next();
 			if(p instanceof CarPolicy) {
-				catalogPrice = ((CarPolicy) p).getCatalogPrice();
+				catalogPrice = ((CarPolicy) p).getCar().getCatalogPrice();
 			}
 		}
-		assertTrue(0 == BigDecimal.valueOf(45000).compareTo(catalogPrice));
+		assertTrue(0 == BigDecimal.valueOf(28500).compareTo(catalogPrice));
 	}
 
 }

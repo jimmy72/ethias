@@ -2,6 +2,6 @@ package be.vdab.ethias.entities;
 
 import java.math.BigDecimal;
 
-public interface Insurable {
-	public abstract BigDecimal calculatePremium();
+public interface Insurable{
+	public abstract BigDecimal getValue();
 }

@@ -38,6 +38,9 @@ public abstract class Policy implements Serializable {
 	@Column(name = "policy_date")
 	private LocalDate date;
 	
+	@Column(name = "premium")
+	private BigDecimal premium = BigDecimal.ZERO;
+	
 	@ManyToOne(optional = false, fetch = FetchType.LAZY) 
 	@JoinColumn(name = "customer_id") 
 	private Customer customer;
@@ -78,6 +81,8 @@ public abstract class Policy implements Serializable {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+	
+	public abstract BigDecimal getPremium();
 
 	public Customer getCustomer() {
 		return customer;
@@ -94,8 +99,6 @@ public abstract class Policy implements Serializable {
 		this.customer = customer;
 	}
 		
-	public abstract BigDecimal calculatePremium();
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

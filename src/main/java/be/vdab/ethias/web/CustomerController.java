@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import be.vdab.ethias.entities.Car;
 import be.vdab.ethias.entities.CarPolicy;
 import be.vdab.ethias.entities.Customer;
 import be.vdab.ethias.entities.Location;
@@ -61,8 +62,9 @@ class CustomerController {
 			for(Policy policy : policies) {
 				if(policy instanceof CarPolicy) {
 					try {
-						BigDecimal soapCatalogPrice = carService.getCarResponse(((CarPolicy) policy).getBrand(), ((CarPolicy) policy).getModel()).getCar().getCatalogPrice();
-						((CarPolicy) policy).setCatalogPrice(soapCatalogPrice);
+						BigDecimal soapCatalogPrice = carService.getCarResponse( ((CarPolicy) policy).getCar().getBrand(), ((CarPolicy) policy).getCar().getModel() )
+								.getCar().getCatalogPrice();
+						((CarPolicy) policy).getCar().setCatalogPrice(soapCatalogPrice);
 						System.out.println("soap request calalogprice ok!!!");
 					}catch(CarClientTransportException ex) {
 						System.out.println(ex.getMessage());
@@ -82,7 +84,8 @@ class CustomerController {
 		Address address = new Address("Steenakkerstraat", "26a", location);
 		Customer customer = new Customer("TestFirstName", "TestSurname", 72092520940L, address, "testemail@hotmail.com");
 		//Customer customer = new Customer(1L, "Jimmy", "Godin", 72092520938L, address, "jimmy.godin@hotmail.com");
-		Policy policy = new CarPolicy("956testnumber455", new PolicyType(1L, "CAR"), LocalDate.now(), customer, "Ferrari", "V8", BigDecimal.valueOf(150000));
+		Car car = new Car(1L, "QS45J5698OP4523658", "Mercedes", "A-Klasse", BigDecimal.valueOf(28500.00));
+		Policy policy = new CarPolicy("956testnumber455", new PolicyType(1L, "CAR"), LocalDate.now(), customer, true, true, car);
 		customer.addPolicy(policy);
 		customerService.create(customer);
 		//policyService.create(policy);
